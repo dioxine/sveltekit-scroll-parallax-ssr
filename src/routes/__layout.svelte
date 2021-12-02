@@ -1,12 +1,21 @@
 <script>
+	import { currentY } from '../stores/store.js';
 	import { Scroller } from '$lib/scroller';
 
 	let y = 0;
 
 	function actionFunc(node) {
 		const scroller = new Scroller(node);
-		scroller.init({wrapperDamper: 0.1, cancelOnTouch: false});
+		scroller.init({ wrapperDamper: 0.07, cancelOnTouch: false });
+
+		return {
+			destroy() {
+				scroller.cancel();
+			}
+		};
 	}
+
+	$: y = $currentY.toFixed(2);
 
 	let backdropToggle = false;
 </script>

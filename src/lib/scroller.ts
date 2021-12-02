@@ -1,7 +1,9 @@
+import { currentY } from '../stores/store.js';
+
 export class Scroller {
 	defaults: { wrapperDamper: number; cancelOnTouch: boolean };
-	
-    active: boolean;
+
+	active: boolean;
 	animateId: number;
 	cancelOnTouch: boolean;
 	resizing: boolean;
@@ -9,7 +11,7 @@ export class Scroller {
 	wrapperDamper: number;
 	wrapperOffset: number;
 	wrapperHeight: number;
-    
+
 	validateOptions: (ops: any) => void;
 
 	constructor(wrapper: HTMLElement) {
@@ -27,10 +29,10 @@ export class Scroller {
 				}
 			}
 		};
-		
+
 		this.cancelOnTouch;
 		this.wrapperDamper;
-		
+
 		this.wrapper = wrapper;
 
 		this.wrapperOffset = 0;
@@ -49,7 +51,7 @@ export class Scroller {
 		this.resizing = false;
 		this.wrapperDamper = this.defaults.wrapperDamper;
 		this.cancelOnTouch = this.defaults.cancelOnTouch;
-		
+
 		this.wrapper.style.position = 'fixed';
 		this.wrapper.style.width = '100%';
 
@@ -71,6 +73,8 @@ export class Scroller {
 				: document.documentElement.scrollTop || 0.0;
 		this.wrapperOffset += (scrollY - this.wrapperOffset) * this.wrapperDamper;
 		this.wrapper.style.transform = 'translate3d(0,' + -this.wrapperOffset.toFixed(2) + 'px, 0)';
+
+		currentY.set(this.wrapperOffset);
 	}
 
 	checkResize() {
