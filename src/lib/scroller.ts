@@ -1,7 +1,7 @@
 export class Scroller {
 	defaults: { wrapperId: string; wrapperDamper: number; cancelOnTouch: boolean };
-	validateOptions: (ops: any) => void;
-	active: boolean;
+	
+    active: boolean;
 	animateId: number;
 	cancelOnTouch: boolean;
 	resizing: boolean;
@@ -10,6 +10,8 @@ export class Scroller {
 	wrapperDamper: number;
 	wrapperOffset: number;
 	wrapperHeight: number;
+    
+	validateOptions: (ops: any) => void;
 
 	constructor() {
 		this.defaults = {
