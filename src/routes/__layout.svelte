@@ -1,6 +1,6 @@
 <script>
-	import { currentY } from '../stores/store.js';
 	import { Scroller } from '$lib/scroller';
+	import { scrollerCurrentY } from '../stores/store.js';
 
 	let y = 0;
 
@@ -15,7 +15,7 @@
 		};
 	}
 
-	$: y = $currentY.toFixed(2);
+	$: y = parseFloat($scrollerCurrentY.toFixed(2));
 
 	let backdropToggle = false;
 </script>

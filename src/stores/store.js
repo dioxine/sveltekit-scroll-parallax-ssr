@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export let currentY = writable(0);
+export let scrollerCurrentY = writable(0);

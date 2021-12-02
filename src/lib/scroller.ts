@@ -1,4 +1,4 @@
-import { currentY } from '../stores/store.js';
+import { scrollerCurrentY } from '../stores/store.js';
 
 export class Scroller {
 	defaults: { wrapperDamper: number; cancelOnTouch: boolean };
@@ -74,7 +74,7 @@ export class Scroller {
 		this.wrapperOffset += (scrollY - this.wrapperOffset) * this.wrapperDamper;
 		this.wrapper.style.transform = 'translate3d(0,' + -this.wrapperOffset.toFixed(2) + 'px, 0)';
 
-		currentY.set(this.wrapperOffset);
+		scrollerCurrentY.set(this.wrapperOffset);
 	}
 
 	checkResize() {
