@@ -1,21 +1,19 @@
 export class Scroller {
-	defaults: { wrapperId: string; wrapperDamper: number; cancelOnTouch: boolean };
+	defaults: { wrapperDamper: number; cancelOnTouch: boolean };
 	
     active: boolean;
 	animateId: number;
 	cancelOnTouch: boolean;
 	resizing: boolean;
 	wrapper: HTMLElement;
-	wrapperId: string;
 	wrapperDamper: number;
 	wrapperOffset: number;
 	wrapperHeight: number;
     
 	validateOptions: (ops: any) => void;
 
-	constructor() {
+	constructor(wrapper: HTMLElement) {
 		this.defaults = {
-			wrapperId: 'butter',
 			wrapperDamper: 0.07,
 			cancelOnTouch: false
 		};
@@ -29,11 +27,12 @@ export class Scroller {
 				}
 			}
 		};
-
-		this.wrapperDamper;
-		this.wrapperId;
+		
 		this.cancelOnTouch;
-		this.wrapper;
+		this.wrapperDamper;
+		
+		this.wrapper = wrapper;
+
 		this.wrapperOffset = 0;
 		this.animateId;
 		this.resizing = false;
@@ -49,10 +48,8 @@ export class Scroller {
 		this.active = true;
 		this.resizing = false;
 		this.wrapperDamper = this.defaults.wrapperDamper;
-		this.wrapperId = this.defaults.wrapperId;
 		this.cancelOnTouch = this.defaults.cancelOnTouch;
-
-		this.wrapper = document.getElementById(this.wrapperId);
+		
 		this.wrapper.style.position = 'fixed';
 		this.wrapper.style.width = '100%';
 

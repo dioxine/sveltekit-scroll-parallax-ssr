@@ -4,14 +4,14 @@
 	let y = 0;
 
 	function actionFunc(node) {
-		node = new Scroller();
-		node.init();
+		const scroller = new Scroller(node);
+		scroller.init({wrapperDamper: 0.1, cancelOnTouch: false});
 	}
 
 	let backdropToggle = false;
 </script>
 
-<div id="butter" use:actionFunc>
+<div use:actionFunc>
 	<div class="square4" style="transform: translate3d({500 + -y * 0.5}px,{y * 1.5}px,0);" />
 	<div class="square1" style="transform: translate3d(100px,{y * 1.5}px,0);" />
 	<div class="square2" style="transform: translate3d({y / 3}px,0,0);" />
