@@ -1,15 +1,14 @@
 <script>
-	import Butter from '$lib/scroller';
-	
+	import { Scroller } from '$lib/scroller';
+
 	let y = 0;
 
-	function actionFunc(node) {	
-		node = new Butter();
+	function actionFunc(node) {
+		node = new Scroller();
 		node.init();
-	}	
-	
-	let backdropToggle = false;
+	}
 
+	let backdropToggle = false;
 </script>
 
 <div id="butter" use:actionFunc>
