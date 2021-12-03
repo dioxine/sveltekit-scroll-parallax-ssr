@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Scroller } from '$lib/scroller';
+	// import Navbar from '$lib/components/Navbar.svelte';
 
 	function scrollerAction(node: HTMLElement) {
 		const scroller = new Scroller(node);
@@ -11,8 +12,9 @@
 			}
 		};
 	}
-
 </script>
+
+<!-- <Navbar /> -->
 
 <div use:scrollerAction>
 	<slot />

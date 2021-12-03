@@ -2,9 +2,9 @@
 	import ParallaxSection from '$lib/components/ParallaxSection.svelte';
 </script>
 
-<ParallaxSection speed={0.5} color={'red'} />
+<ParallaxSection speed={0.5} color={'red'} height={'500px'} cutBottom />
 
-<p>
+<div>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eveniet, unde cumque quod
 	quia error quisquam eius nobis omnis? Reiciendis optio quo repellendus et ullam deleniti officia!
 	Impedit dolores ullam maxime enim, culpa porro mollitia eaque nihil laborum architecto tempore
@@ -29,11 +29,11 @@
 	deleniti voluptas dolore laboriosam, adipisci rem autem. Voluptatem, velit delectus eligendi
 	obcaecati alias ducimus corporis at. Quas, possimus ipsam ducimus consectetur eligendi nulla quis
 	recusandae dignissimos assumenda ut! Dolor, deserunt.
-</p>
+</div>
 
-<ParallaxSection speed={0.5} color={'green'} />
+<ParallaxSection speed={0.5} color={'green'} height={'300px'} />
 
-<p>
+<div>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti consectetur, est iusto dolorum
 	harum magnam architecto obcaecati deserunt eaque repudiandae nisi modi soluta aliquam ea quam odio
 	libero. Nostrum culpa quos, deserunt molestias voluptatibus voluptas accusamus non unde dicta
@@ -58,11 +58,11 @@
 	modi assumenda sapiente deserunt eveniet! Placeat eligendi officiis illo itaque, eveniet ex cum,
 	dolores in magni nihil esse qui delectus vel modi perferendis. Ex assumenda aut ipsum porro
 	perferendis voluptatum incidunt fugiat blanditiis ratione!
-</p>
+</div>
 
-<ParallaxSection speed={0} color={'blue'} />
+<ParallaxSection speed={0} color={'blue'} height={'300px'} />
 
-<p>
+<div>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nulla, in cum recusandae
 	magnam commodi nisi ex doloribus molestiae consectetur harum blanditiis magni facilis quisquam?
 	Corporis porro reiciendis vel minus dolores nesciunt illum iusto soluta a reprehenderit, molestias
@@ -87,11 +87,12 @@
 	quis placeat expedita, excepturi iure at tempore nihil magnam ipsam suscipit dolorem atque ipsum
 	iusto fugiat ullam amet! Dignissimos fuga beatae at sequi culpa magni amet aperiam vero, delectus
 	commodi. Maiores expedita quidem officia cum est adipisci iure?
-</p>
+</div>
 
 
 <style>
-    p {
-        background-color: rgba(255, 255, 255, 0.3);
+    div {
+		position:relative;
+        background-color: rgba(255, 255, 255, 1);
     }
 </style>
